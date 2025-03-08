@@ -23,6 +23,6 @@ jobs:
           print(sys.version)
           
       - name: Node.js - Version Information
-        shell: node
+        shell: node {0}
         run: |
           console.log(process.version)
