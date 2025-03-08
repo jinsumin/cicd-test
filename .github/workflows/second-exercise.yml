@@ -4,16 +4,17 @@ on: [push]
 jobs:
   shell-cmd-job:
     runs-on: windows-latest
-    defaults: #Job Leve Defaults
+    defaults: # Job Level Defaults (여기 위치가 맞음)
       run:
         shell: pwsh
-      steps:
-        - name: 파이썬
-          shell: python
-          run: |
-            import sys
-            print(sys.version)
-        - name: 노드
-          shell: node {0}
-          run: |
-            console.log(process.version)
+    steps:
+      - name: 파이썬 실행
+        shell: python
+        run: |
+          import sys
+          print(sys.version)
+          
+      - name: 노드 실행
+        shell: node
+        run: |
+          console.log(process.version);
