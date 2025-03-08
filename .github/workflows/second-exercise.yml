@@ -1,20 +1,28 @@
-name: second-workflow
+name: Multi-Shell Environment Exercise
 on: [push]
 
 jobs:
-  shell-cmd-job:
+  multi-shell-job:
     runs-on: windows-latest
-    defaults: # Job Level Defaults (여기 위치가 맞음)
-      run:
-        shell: pwsh
     steps:
-      - name: 파이썬 실행
+      - name: Bash - System Information
+        shell: bash
+        run: uname -a
+        
+      - name: PowerShell - Computer Information
+        shell: pwsh
+        run: |
+          Get-ComputerInfo
+          # $PSVersionTable
+          # Get-Host | Select-Object Version
+        
+      - name: Python - Version Information
         shell: python
         run: |
           import sys
           print(sys.version)
           
-      - name: 노드 실행
-        shell: node
+      - name: Node.js - Version Information
+        shell: node {0}
         run: |
-          console.log(process.version);
+          console.log(process.version)
