@@ -1,4 +1,4 @@
-name: Multi-Shell Environment Exercise
+name: Multi-Shell Environment Exercise234234
 on: [push]
 
 jobs:
@@ -23,6 +23,6 @@ jobs:
           print(sys.version)
           
       - name: Node.js - Version Information
-        shell: node {0}
+        shell: node
         run: |
           console.log(process.version)
