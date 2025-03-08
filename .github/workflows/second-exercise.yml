@@ -14,6 +14,6 @@ jobs:
             import sys
             print(sys.version)
         - name: 노드
-          shell: node
+          shell: node {0}
           run: |
             console.log(process.version)
