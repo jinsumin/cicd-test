@@ -1,0 +1,19 @@
+name: first-workflow
+on: [push]
+
+jobs:
+  shell-cmd-job:
+    runs-on: windows-latest
+    defaults: #Job Leve Defaults
+      run:
+        shell: pwsh
+      steps:
+        - name: 파이썬
+          shell: python
+          run: |
+            import sys
+            print(sys.version)
+        - name: 노드
+          shell: node
+          run: |
+            console.log(process.version)
